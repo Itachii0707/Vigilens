@@ -1,0 +1,81 @@
+class_id,class_name,count,percentage
+0,person,254,27.34%
+1,bicycle,6,0.65%
+2,car,46,4.95%
+3,motorcycle,5,0.54%
+4,airplane,6,0.65%
+5,bus,7,0.75%
+6,train,3,0.32%
+7,truck,12,1.29%
+8,boat,6,0.65%
+9,traffic light,14,1.51%
+10,fire hydrant,0,0.00%
+11,stop sign,2,0.22%
+12,parking meter,0,0.00%
+13,bench,9,0.97%
+14,bird,16,1.72%
+15,cat,4,0.43%
+16,dog,9,0.97%
+17,horse,2,0.22%
+18,sheep,0,0.00%
+19,cow,0,0.00%
+20,elephant,17,1.83%
+21,bear,1,0.11%
+22,zebra,4,0.43%
+23,giraffe,9,0.97%
+24,backpack,6,0.65%
+25,umbrella,18,1.94%
+26,handbag,19,2.05%
+27,tie,7,0.75%
+28,suitcase,4,0.43%
+29,frisbee,5,0.54%
+30,skis,1,0.11%
+31,snowboard,7,0.75%
+32,sports ball,6,0.65%
+33,kite,10,1.08%
+34,baseball bat,4,0.43%
+35,baseball glove,7,0.75%
+36,skateboard,5,0.54%
+37,surfboard,0,0.00%
+38,tennis racket,7,0.75%
+39,bottle,18,1.94%
+40,wine glass,16,1.72%
+41,cup,36,3.88%
+42,fork,6,0.65%
+43,knife,16,1.72%
+44,spoon,22,2.37%
+45,bowl,28,3.01%
+46,banana,1,0.11%
+47,apple,0,0.00%
+48,sandwich,2,0.22%
+49,orange,4,0.43%
+50,broccoli,11,1.18%
+51,carrot,24,2.58%
+52,hot dog,2,0.22%
+53,pizza,5,0.54%
+54,donut,14,1.51%
+55,cake,4,0.43%
+56,chair,35,3.77%
+57,couch,6,0.65%
+58,potted plant,14,1.51%
+59,bed,3,0.32%
+60,dining table,13,1.40%
+61,toilet,2,0.22%
+62,tv,2,0.22%
+63,laptop,3,0.32%
+64,mouse,2,0.22%
+65,remote,8,0.86%
+66,keyboard,0,0.00%
+67,cell phone,8,0.86%
+68,microwave,3,0.32%
+69,oven,5,0.54%
+70,toaster,0,0.00%
+71,sink,6,0.65%
+72,refrigerator,5,0.54%
+73,book,29,3.12%
+74,clock,9,0.97%
+75,vase,2,0.22%
+76,scissors,1,0.11%
+77,teddy bear,21,2.26%
+78,hair drier,0,0.00%
+79,toothbrush,5,0.54%

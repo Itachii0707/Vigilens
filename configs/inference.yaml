@@ -1,0 +1,27 @@
+# VEY RAXIS SENTINEL - Runtime Inference Configuration
+model_path: "runs/checkpoints/best.pt"
+fallback_model: "yolo11n.pt"
+device: "auto"               # 'cuda', 'cpu', or 'auto'
+
+inference:
+  conf_threshold: 0.25       # Minimum confidence score
+  iou_threshold: 0.45        # NMS intersection-over-union threshold
+  max_det: 300               # Maximum detections per frame
+  classes: null              # null means detect all classes; or e.g. [0, 2] to filter
+  enable_tracking: false     # Enable temporal ID persistence across frames
+  tracker_type: "bytetrack"  # 'bytetrack' or 'botsort'
+
+visualization:
+  draw_boxes: true
+  draw_labels: true
+  draw_conf: true
+  draw_fps: true
+  draw_alerts: true
+  alert_classes:
+    - "fire"
+    - "damaged_component"
+
+stream:
+  max_reconnect_attempts: 5
+  reconnect_backoff_sec: 2.0
+  buffer_size: 1

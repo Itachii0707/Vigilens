@@ -1,0 +1,28 @@
+# VEY RAXIS SENTINEL - Deployment & Server Configuration
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1
+  log_level: "info"
+  log_json: false
+
+security:
+  max_upload_size_mb: 15
+  allowed_mime_types:
+    - "image/jpeg"
+    - "image/png"
+    - "image/webp"
+    - "image/bmp"
+  request_timeout_seconds: 30
+
+export:
+  formats:
+    - "onnx"
+    - "engine"               # TensorRT for NVIDIA GPUs
+    - "openvino"             # Intel CPU/VPU acceleration
+  imgsz: 640
+  dynamic_batch: true
+  opset_version: 17
+  validation:
+    max_allowed_score_diff: 0.08
+    min_allowed_iou: 0.85

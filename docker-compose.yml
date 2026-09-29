@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  veyraxis-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: veyraxis-sentinel:latest
+    container_name: veyraxis-sentinel-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - SENTINEL_HOST=0.0.0.0
+      - SENTINEL_PORT=8000
+      - SENTINEL_DEVICE=auto
+      - SENTINEL_MODEL_PATH=/app/runs/checkpoints/best.pt
+      - SENTINEL_CONF_THRESHOLD=0.25
+      - SENTINEL_MAX_UPLOAD_SIZE_MB=15
+      - MLFLOW_TRACKING_URI=http://mlflow-server:5000
+    volumes:
+      - ./runs:/app/runs
+      - ./outputs:/app/outputs
+      - ./data:/app/data
+    depends_on:
+      - mlflow-server
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  mlflow-server:
+    image: ghcr.io/mlflow/mlflow:v2.11.0
+    container_name: veyraxis-mlflow
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:///mlflow/mlflow.db
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    volumes:
+      - mlflow-data:/mlflow
+
+volumes:
+  mlflow-data:
