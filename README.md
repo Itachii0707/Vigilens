@@ -13,13 +13,25 @@
 
 ---
 
-## 🎬 Live Interactive Studio Demo
+## 💻 Command-Line Interface (CLI) & Real-Time Demo
 
-![VigiLens Live Demo](assets/sentinel_demo.gif)
+![VigiLens CLI Real-Time Surveillance & Analytics Demo](assets/cli_demo.png)
 
-*Real-time object detection across 80 COCO categories, sub-35ms GPU latency, operational industry presets, and interactive bounding-box inspector.*
+*VigiLens CLI running with real-time YOLO11x detection, ByteTrack tracking, Jordan Curve ray-casting hazard zone perimeter monitoring, and decoupled background camera streaming.*
 
-> 📹 **High-Definition Video**: [Download / Watch MP4 (720p HD)](assets/sentinel_demo.mp4) &nbsp;|&nbsp; 🖼️ **Lightweight WebP**: [sentinel_demo.webp](assets/sentinel_demo.webp)
+### ⚡ Quick CLI Demo Execution
+Run any of the following commands directly from your terminal:
+
+```powershell
+# 1. Live Webcam Feed with Tracking & Preset Hazard Zones
+python scripts/predict.py --source 0 --display --track --zone preset
+
+# 2. Image Batch Inference with High-Confidence Flagship Weights
+python scripts/predict.py --source data/raw --conf-threshold 0.50 --save-dir outputs/predictions
+
+# 3. High-Throughput Video Pipeline with Virtual Tripwire Monitoring
+python scripts/predict.py --source path/to/video.mp4 --tripwire "0,360,1280,360" --track --save-dir outputs/tracks
+```
 
 ---
 
